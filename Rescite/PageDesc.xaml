@@ -1,0 +1,29 @@
+﻿<Page x:Class="Citeseer.Page4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="Page4" MinHeight="200" HorizontalAlignment="Stretch">
+
+    <ScrollViewer BorderBrush="DarkGray" Margin="5,0,5,0" HorizontalAlignment="Stretch" BorderThickness="1" MaxWidth="300" Background="White" VerticalScrollBarVisibility="Auto" x:Name="page_desc" MinHeight="350">
+        <Border BorderBrush="DarkGray" BorderThickness="1" Margin="0,0,0,0">
+            <StackPanel x:Name="page_desc_panel" Margin="5" MinHeight="350" HorizontalAlignment="Stretch">
+                <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Padding="5" FontSize="15" FontWeight="Black" Text="Publication Description" RenderTransformOrigin="0.501,0.908"/>
+                <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Stretch" x:Name="Title" TextWrapping="Wrap" Padding="5" FontSize="12" FontWeight="Black" Text="" RenderTransformOrigin="0.501,0.908"/>
+                <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Stretch" x:Name="Description" TextWrapping="Wrap" Text="" Padding="5" FontSize="12" RenderTransformOrigin="0.501,0.908"/>
+                <Label FontSize="12" FontWeight="Bold" Content="Co-Authors"/>
+                <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Stretch" x:Name="Authors" TextWrapping="Wrap" Text="" Padding="5" FontSize="12"/>
+                <Label FontSize="12" FontWeight="Bold" Content="Publication Url"/>
+                <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Stretch" x:Name="Url" TextWrapping="Wrap" Text="" Padding="5" FontSize="12"/>
+                <Label FontSize="12" FontWeight="Bold" Content="Year"/>
+                <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" HorizontalAlignment="Stretch" x:Name="Year" TextWrapping="Wrap" Text="" Padding="5" FontSize="12"/>
+                <TextBlock x:Name="viewlink" Padding="5">
+                        <Hyperlink x:Name="link" Cursor="Hand" Click="linkClick">
+                            View Publication
+                            </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</Page>

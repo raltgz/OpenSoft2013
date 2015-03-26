@@ -1,0 +1,294 @@
+﻿<Page x:Class="Citeseer.TabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      FocusManager.FocusedElement="{Binding ElementName=searchBox}"
+	Title="Page1">
+
+    <ScrollViewer Margin="0,0,0,0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" x:Name="MainPane" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FocusManager.FocusedElement="{Binding ElementName=searchBox}">
+        <StackPanel MinWidth="200">
+            <Grid VerticalAlignment="Top" Height="50" Background="#FFECECEC">
+                <DockPanel Margin="182,10,0,10">
+                    <Grid>
+                        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="778" ValueChanged="ProgressBar_ValueChanged_1"/>
+                        <TextBox x:Name="searchBox" Padding="5" Focusable ="true" HorizontalAlignment="Left" Width="778" KeyDown="onKey" />
+                        <Button Margin="748,7,10,7" x:Name="cancel" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Visibility="Hidden"  Width="20" Height="16" Click="cancelSearch">
+                            <Image Source="close.png" VerticalAlignment="Bottom"></Image>
+                        </Button>
+                    </Grid>
+                    <Button x:Name="btnGo" ToolTip="Search" Cursor="Hand" Content="Go" Foreground="White" HorizontalAlignment="Left" BorderBrush="LightGray"  BorderThickness="0" Width="70" Click="search">
+                        <Button.Background>
+                            <SolidColorBrush>
+                                <SolidColorBrush.Color>
+                                    <Color>#4787ed</Color>
+                                </SolidColorBrush.Color>
+                            </SolidColorBrush>
+                        </Button.Background>
+                        <Button.Style>
+                            <Style x:Name="MouseOverButtonStyle" TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Name="border" BorderThickness="0" Padding="4,2" BorderBrush="DarkGray" CornerRadius="0" Background="{TemplateBinding Background}" >
+                                                <Grid>
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="1"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="orange"/>
+                                                    <Setter Property="Background" Value="#6787fe" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="lightGray"/>
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="border" Property="Background" Value="#4787ed" />
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="#AAAAAA" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Cursor="Hand" ToolTip="Favorites" x:Name="btnShowFav" Margin="70, 0, 0, 0" Width="70" Click="showFav">
+                        <Image Source="favorite.png"></Image>
+                        <Button.Background>
+                            <SolidColorBrush>
+                                <SolidColorBrush.Color>
+                                    <Color>#4787ed</Color>
+                                </SolidColorBrush.Color>
+                            </SolidColorBrush>
+                        </Button.Background>
+                        <Button.Style>
+                            <Style x:Name="MouseOverButtonStyle1" TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Name="border" BorderThickness="0" Padding="4,2" BorderBrush="DarkGray" CornerRadius="0" Background="{TemplateBinding Background}" >
+                                                <Grid>
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="1"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="orange"/>
+                                                    <Setter Property="Background" Value="#6787fe" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="lightGray"/>
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="border" Property="Background" Value="#4787ed" />
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="#AAAAAA" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnHelp" Content="?" Cursor="Help" ToolTip="Help" DockPanel.Dock="Left" FontSize="20" Margin="30,0,0,0" FontWeight="Bold" Foreground="White" Width="70" Click="help">
+                        <Button.Background>
+                            <SolidColorBrush>
+                                <SolidColorBrush.Color>
+                                    <Color>#4787ed</Color>
+                                </SolidColorBrush.Color>
+                            </SolidColorBrush>
+                        </Button.Background>
+                        <Button.Style>
+                            <Style x:Name="MouseOverButtonStyle3" TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Name="border" BorderThickness="0" Padding="4,2" BorderBrush="DarkGray" CornerRadius="0" Background="{TemplateBinding Background}" >
+                                                <Grid>
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="1"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="orange"/>
+                                                    <Setter Property="Background" Value="#6787fe" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="lightGray"/>
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="border" Property="Background" Value="#4787ed" />
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="#AAAAAA" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </DockPanel>
+            </Grid>
+            <DockPanel MinHeight="500" MaxHeight="570" VerticalAlignment="Stretch">
+                <Border BorderBrush="LightGray" BorderThickness="1,1,0,1">
+                    <Grid Background="#FFFFFF" x:Name="SearchWrap" HorizontalAlignment="Left" MinWidth="180" Width="71">
+                        <Grid Margin="10,0,0,0"  x:Name="SearchPane">
+                            <Label Content="Search By " FontWeight="Medium" Padding="0,2,2,2" HorizontalAlignment="Left" Margin="0,48,0,0" VerticalAlignment="Top" Width="98" />
+                            <RadioButton x:Name="radioAuthor" Content="Author" IsChecked="true" HorizontalAlignment="Left" Margin="0,73,0,0" VerticalAlignment="Top" GroupName="searchType"/>
+                            <RadioButton x:Name="radioJournal" Content="Journal" HorizontalAlignment="Left" Margin="82,73,0,0" VerticalAlignment="Top" GroupName="searchType"/>
+                            <Label Content="Sort By " FontWeight="Medium" Padding="0,2,2,2" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top" Width="98" />
+                            <RadioButton x:Name="radioCitations" IsChecked="true" Content="Citations" HorizontalAlignment="Left" Margin="0,129,0,0" VerticalAlignment="Top" GroupName="sortType"/>
+                            <RadioButton x:Name="radioDate" Content="Year" HorizontalAlignment="Left" Margin="82,129,0,0" VerticalAlignment="Top" GroupName="sortType"/>
+                            <TextBox x:Name="yearStart" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
+                            <Label Content="-" HorizontalAlignment="Left" Margin="43,182,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.321,0.898"/>
+                            <TextBox x:Name="yearEnd" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="58,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43"/>
+                            <CheckBox x:Name="checkBoxCustomRange" FontWeight="Medium" Content="Custom Year Range" HorizontalAlignment="Left" Margin="0,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.015,0.508" Click="checkBoxCustomRange_Click"/>
+                            <Label x:Name="btnAddFav"  Cursor="Hand" IsEnabled="False"  Visibility="Hidden" HorizontalContentAlignment="Center" BorderBrush="LightGray" BorderThickness="0.5" Background="White"  Width ="126" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" MouseUp="addFav">
+                                + Add to Favorites
+                            </Label>
+                            <Button x:Name="btnExport" ToolTip="Export" Cursor="Hand" IsEnabled="False" Foreground="White"  Visibility="Hidden" Content="Export" Width ="93" HorizontalAlignment="Left" Margin="28,298,0,0" VerticalAlignment="Top" Click="export">
+                                <Button.Background>
+                            <SolidColorBrush>
+                                <SolidColorBrush.Color>
+                                    <Color>#4787ed</Color>
+                                </SolidColorBrush.Color>
+                            </SolidColorBrush>
+                        </Button.Background>
+                        <Button.Style>
+                            <Style x:Name="MouseOverButtonStyle4" TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Name="border" BorderThickness="0" Padding="4,2" BorderBrush="DarkGray" CornerRadius="0" Background="{TemplateBinding Background}" >
+                                                <Grid>
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="1"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="orange"/>
+                                                    <Setter Property="Background" Value="#6787fe" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="lightGray"/>
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="border" Property="Background" Value="#4787ed" />
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="#AAAAAA" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="true">
+                                                    <Setter Property="Background" Value="#4787ed"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                            </Button>
+                            <!--<CheckBox x:Name="checkBoxIncludePatents" FontWeight="Medium" Content="Include Patents" Margin="0,228,0,293"/>-->
+                        </Grid>
+                        <Separator HorizontalAlignment="Left" Height="100" Margin="-15,48,0,0" VerticalAlignment="Top" Width="195"/>
+                        <Separator HorizontalAlignment="Left" Height="100" Margin="-15,-4,0,0" VerticalAlignment="Top" Width="195"/>
+                        <Separator HorizontalAlignment="Left" Height="100" Margin="-15,101,0,0" VerticalAlignment="Top" Width="195"/>
+                        <Separator HorizontalAlignment="Left" Height="100" Margin="-15,167,0,0" VerticalAlignment="Top" Width="195"/>
+                        <Label Content="Search Options" HorizontalAlignment="Center" FontSize="15" FontWeight="ExtraBold" Padding="0"  Margin="10,20,55,0" VerticalAlignment="Top" Width="115" Height="22"/>
+                        <Separator x:Name="sep1" Visibility="Hidden" HorizontalAlignment="Left" Height="100" Margin="-15,235,0,0" VerticalAlignment="Top" Width="195"/>
+                        <Separator x:Name="sep2" Visibility="Hidden" Height="100" Margin="-15,285,0,0" VerticalAlignment="Top" Width="195"/>
+                    </Grid>
+                </Border>
+
+
+                <Grid HorizontalAlignment="Stretch" x:Name="ResultScroll" Margin="0,0,0,0" MaxHeight="700" MinWidth="850" >
+                    <ListBox x:Name = "ResultsPane" BorderBrush="LightGray" ScrollViewer.CanContentScroll="True" ScrollViewer.PanningDeceleration="0" ScrollViewer.IsDeferredScrollingEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxWidth="1200" MaxHeight="700" MinHeight="560" />
+                </Grid>
+
+
+                <ScrollViewer Margin="0,0,0,0" x:Name="previewPane" VerticalScrollBarVisibility="Auto" MaxHeight="700" MaxWidth="400" Padding="5,0,5,5">
+                    <StackPanel MinWidth="50" MinHeight="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="keyFocus">
+                        <Grid x:Name="Author" MinHeight="0" Margin="5" HorizontalAlignment="Stretch" MaxHeight="200">
+
+                        </Grid>
+
+                        <Grid x:Name="Journal" HorizontalAlignment="Stretch" MaxHeight="200"></Grid>
+                        <Grid x:Name="Paper">
+
+                        </Grid>
+
+                        <!--<Button.Style>
+                                <Style TargetType="Button">
+                            
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="true">
+                                            <Setter Property="Background" Value="DarkGray"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightBlue"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>-->
+
+
+                    </StackPanel>
+
+                </ScrollViewer>
+            </DockPanel>
+            <DockPanel MinHeight="25" MaxHeight="28">
+                <Grid HorizontalAlignment="Left" MinWidth="180" Width="71"></Grid>
+                <Border BorderBrush="DarkGray" BorderThickness="0" MaxWidth="1000" Margin="2">
+                    <UniformGrid Rows="1" Columns="12" HorizontalAlignment="Stretch" x:Name="Pagination" Margin="125,0,200,0" MaxWidth="680" MinWidth="580" >
+
+                    </UniformGrid>
+                </Border>
+                <Grid MaxWidth="400"/>
+            </DockPanel>
+            <StatusBar x:Name="statusBar" Margin="0,0,0,0" Height="22">
+                <StatusBarItem>
+                    <TextBlock x:Name="textbox" MaxWidth="650"/>
+                </StatusBarItem>
+            </StatusBar>
+        </StackPanel>
+
+    </ScrollViewer>
+</Page>

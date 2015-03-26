@@ -1,0 +1,65 @@
+
+<html lang="en">
+<head>
+<title>
+ResCite Help 
+	
+</title>
+
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="prettify.css" rel="stylesheet">
+
+<style type="text/css">
+#br{
+height:10px;
+}
+#brli{
+height:20px;
+}
+</style>
+</head>
+
+<body class="metrouicss bg-color-blueLight">
+
+
+<div class ="page secondary">
+<div class="page-header">
+<div class="page-header-content">
+<h2><b>ResCite</b></h2>
+</div></div>
+<hr>
+<div class="page-region"><div class="page-region-content fg-color-blueDark" >
+<span class="fg-color-red" style="font-size:25px;font-weight:100;font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;"> How to use ResCite</span>
+<div id="br"></div><div id="Div1"></div>
+<ul style="font-size:25px;line-height:20px;">
+<div id="brli"></div>
+<ul style="">
+<li style="font-size:15px;line-height:20px;"><b>Search</b> :- Set your Search Parameters in your Left pane according to your Search by Selecting Author/Journal and Citations/Year. To get Results between a year range, use the Custom Range Feature. Enter the Search Text in the Search Box . Click on “Go” or Press Enter.</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Cancel Search</b> :- If you want to have your Search cancelled while we are fetching the results, Click on the   Close Button to Cancel the search.</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>View Author/Journal Details</b> : -The Right Pane contains the Author/Journal Details once the Results are fetched.
+Click on the View Profile Link.
+</li><div id="brli"></div>
+
+<li style="font-size:15px;line-height:20px;"><b>View Preview of a Paper/Publication</b> :- Click on a result to view its preview in the Preview pane.</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>View Citations</b> :- Click on the View Citations Link of any Paper to view all the papers which have Cited that paper. </li><div id="brli"></div>
+
+<li style="font-size:15px;line-height:20px;"><b>Pagination</b>:- To view more results for a Search Query, Click on the Page Numbers displayed below the Results Pane which would fetch more results accordingly.</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Add To Favorites</b>:- Once the Results are displayed in the Results Pane, We can add the corresponding Search Query to Favorites by clicking on the “Add to Favorites” Button on the Left Pane.</li> <div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Favorites</b>:-User can look into the Favorites List by Clicking on the Favorites Button.</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Export</b>:- User can Export a particular Search Result by clicking on the Export Button on the Left pane.	</li>  <div id="brli"></div>
+</ul></ul>
+
+<span class="fg-color-red" style="font-size:25px;font-weight:100;font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;">Shortcuts</span>
+<div id="br"></div><div id="Div3"></div>
+<ul style="font-size:25px;line-height:20px;">
+<div id="brli"></div>
+<ul style="">
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + T </b> :- Open new tab</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + W </b> :- Close current tab</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + Tab </b> :- Move between tabs from left to right</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + Shift + Tab </b> :- Move between tabs from right to left</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + tab number(n) </b> :- Go to the nth tab (0< n <9)</li><div id="brli"></div>
+<li style="font-size:15px;line-height:20px;"><b>Ctrl + 9 </b> :- Go to the last tab</li><div id="brli"></div>
+</ul></ul>
+</html>

@@ -1,0 +1,23 @@
+﻿<Page x:Class="Citeseer.Page5"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="Welcome" Width="658" Height="644">
+    <Grid x:Name="welcome" MinHeight="600" MinWidth="835" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+
+        <Grid Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            
+            <Grid.Background>
+                <ImageBrush ImageSource="bg2.png"/>
+            </Grid.Background>
+            <TextBlock Background="black"  HorizontalAlignment="Left" Height="234" Margin="89,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="458"  FontSize="24" FontFamily="Segoe UI Light" FontStyle="Italic" Foreground="#FFF5F2F2" Opacity="0.5"><LineBreak/><LineBreak/><Run FontSize="24" FontFamily="Segoe UI Light" Language="en-in" Text="       "/><Hyperlink Click="viewHelp" TextDecorations="" Foreground="white">Getting Started</Hyperlink><LineBreak/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="166" Margin="45,39,0,0" TextWrapping="Wrap" Text="   Welcome to ResCite" VerticalAlignment="Top" Width="655" FontSize="48" FontFamily="Segoe UI Light" FontWeight="{DynamicResource {x:Static SystemFonts.StatusFontWeightKey}}" Foreground="#FFF5F2F2" Opacity="0.8"></TextBlock>
+        
+        </Grid>
+    </Grid>
+</Page>
